@@ -13,3 +13,12 @@ install:
 script:
   
   - npm test
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: chmod +x ./deploy.sh && ./deploy.sh
+    on:
+      branch: master  
+
+# //Made a comment in the .travis.yml file to be sure that TravisCI is automatically deploying my project
